@@ -9,8 +9,14 @@
     text-align: center;
   }
 
-.page-wrapper {
+body {
     width: 100%;
+}
+
+.page-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Header styles */
@@ -18,9 +24,9 @@
 .container {
     width: 33%;
     
-}
+ }
   
- header {
+header {
     padding-top: 0.625rem;
     padding-bottom: .625rem;
     display: flex;
@@ -28,7 +34,7 @@
     box-shadow: 0px 4px 4px rgba(0,0,0,25%);
  }
 
- .nav-bar {
+.nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -36,7 +42,7 @@
     align-items: center;
  }
 
- .nav-bar-link {
+.nav-bar-link {
     font-family: "Inter", serif;
     font-weight: 500;
     text-decoration: none;
@@ -44,14 +50,14 @@
     text-shadow: 0px 4px 4px rgba(0,0,0,25%);
  }
 
- .logo {
+.logo {
     font-family: "Inter", serif;
     font-weight: 600;
     color: #231656;
     text-shadow: 0px 4px 4px rgba(0,0,0,25%);
  }
 
- .menu {
+.menu {
     font-family: "Inter", serif;
     font-weight: 400;
     font-size: 16px;
@@ -65,7 +71,81 @@
 
  i{
     vertical-align: middle;
-    font-size: 22px;
+    font-size: 24px;
  }
 
- 
+ /* Promo Styles */
+
+.promo {
+    margin-top: 3.75rem;
+    width: 90%;
+    background-color: #625ffb;
+    border-radius: 72px;
+    height: 25rem;
+    display: flex;
+    justify-content: space-around;
+ }
+
+.promo-heading {
+    float: left;
+    color: #fff;
+    font-family: "Jost",sans-serif;
+    font-weight: 800;
+    font-size: 49px;
+    text-shadow: 0px 4px 4px rgba(0,0,0,25%);
+    align-self: center;
+    text-transform: uppercase;
+    margin-bottom: 10rem;
+ }
+
+.promo-btn {
+    width: 250px;
+    height: 60px;
+    color: #fff;
+    background-color: #231656;
+    border-radius: 25px;
+    font-family: "Inter",sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    align-self: flex-end;
+    margin-bottom: 3.5rem;
+    text-transform: uppercase;
+    text-shadow: 0px 4px 4px rgba(0,0,0,25%);
+ }
+
+ /* Offers Styles */
+
+.offers {
+    width: 90%;
+    margin-top: 6rem;
+}
+
+.offers-heading {
+    text-shadow: 0px 4px 4px rgba(0,0,0,25%);
+    font-family: "Jost",sans-serif;
+    color: #231656;
+
+}
+
+ /* Card Styles */
+
+ .card {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 600px;
+    box-shadow: 3px 6px 4px rgba(0,0,0,25%);
+    border: 1px solid #000;
+ }
+
+ .card-img {
+    width: 500px;
+ }
+
+ .card-name {
+    justify-self: flex-start;
+ }
+
+ .card-price {
+    justify-self: flex-end;
+ }
