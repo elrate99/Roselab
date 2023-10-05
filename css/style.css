@@ -236,13 +236,13 @@ i {
 
 /* Footer Styles */
 
-footer div {
+/*footer div {
    border: 1px solid #000;
-}
+}*/
 
 footer {
   display: grid;
-  grid-template: repeat(2, 0.5fr) repeat(3, 1fr) / 5% repeat(7, 1fr) 5%;
+  grid-template: repeat(2, 0.6fr) repeat(3, 1fr) / 5% repeat(7, 1fr) 5%;
 }
 
 .newsletter {
@@ -286,20 +286,28 @@ footer {
    grid-area: 2 / 2 / 6 / 9;
    background-color: #f5f5f5;
    display: grid;
-   grid-template: repeat(3, 1fr) 10% / 5% repeat(9, 1fr) 5%;
+   grid-template: repeat(5, 1fr)  10% / 5% repeat(9, 1fr) 5%;
+   border-radius: 30px;
 }
 
 .about {
-   grid-area: 2 / 2 / 3 / 5;
+   grid-area: 3 / 2 / 5 / 6;
    text-align: left;
-   padding-right: 1fr;
+   border-right: 2px solid #c4c4c4;
 }
 
 .footer-logo {
    text-align: left;
+   margin-bottom: 1rem;
 }
 
 .about-text {
+   text-align: left;
+   width: 300px;
+   margin-bottom: 1rem;
+   font-family: "Open Sans";
+   color: #4e4e4e;
+   font-size: .85rem;
 }
 
 .social-media-link {
@@ -307,35 +315,88 @@ footer {
   color: #231656;
 }
 
+.social-media-link:first-of-type {
+   margin-right: .4rem;
+}
+
+.social-media-link i {
+   font-size: 1rem;
+}
+
 .footer-nav {
-   grid-area: 2 / 6 / 4 / 8;
+   grid-area: 3 / 7 / 5 / 8;
 }
 
 .footer-heading {
+   color: #231656;
+   font-family: "Inter";
+   font-weight: 600;
+   text-shadow: 0px 4px 4px rgba(0, 0, 0, 25%);
+   margin-bottom: 1rem;
+   text-align: left;
 }
 
+
 .footer-nav-ul {
+   list-style-type: none;
+   line-height: 20px;
 }
 
 .footer-nav-li {
+   text-align: left;
+   font-family: "Open Sans";
+   font-size: .85rem;
 }
 
 .footer-nav-link {
+   color: #4e4e4e;
+   text-decoration: none;
 }
 
 .location {
-   grid-area: 2 / 8 / 4 / 11;
+   grid-area: 3 / 9 / 5 / 11;
+   text-align: left;
 }
 
 .location-text {
+   text-align: left;
+   font-family: "Open Sans";
+   font-size: .85rem;
+   color: #4e4e4e;
+   margin-bottom: 1.5rem;
+}
+
+.location i {
+   font-size: 1rem;
+   margin-right: 1rem;
 }
 
 .email {
+   text-align: left;
+   font-family: "Open Sans";
+   font-size: .85rem;
+   color: #4e4e4e;
+}
+
+.email-contact {
+   display: inline-block;
+   margin-bottom: .5rem;
+}
+
+.phone-contact {
+   display: inline-block;
 }
 
 .phone {
+   text-align: left;
+   font-family: "Open Sans";
+   font-size: .85rem;
+   color: #4e4e4e;
 }
 
 .copyright {
-   grid-area: 4 / 6 / 5 / 7;
+   grid-area: 6 / 6 / 7 / 7;
+   font-family: "Open Sans";
+   font-size: .85rem;
+   color: #4e4e4e;
 }
