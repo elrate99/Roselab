@@ -13,7 +13,7 @@ body {
   width: 100%;
 }
 
-.page-container {
+main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -191,7 +191,7 @@ i {
   box-shadow: 3px 6px 4px rgba(0, 0, 0, 25%);
   border: 1px solid #000;
   border-radius: 10px;
-  margin-top: 2rem;
+  margin-top: 4rem;
   position: relative;
 }
 
@@ -203,13 +203,14 @@ i {
   border-top-left-radius: 10px;
 }
 
-
 .card-text {
   font-family: "Open Sans";
   color: #fff;
+  font-weight: 400;
 }
 
-.card > .hover-desc { /*Настройка расположения блока и текста внутри него*/
+.card > .hover-desc {
+  /*Настройка расположения блока и текста внутри него */
   width: 100%;
   height: 68.2%;
   position: absolute;
