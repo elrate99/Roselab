@@ -78,11 +78,24 @@ header {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 25%);
 }
 
+.nav-bar-link:hover {
+   color:#625ffb;
+}
+
 .logo {
   font-family: "Inter", serif;
   font-weight: 600;
   color: #231656;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 25%);
+}
+
+.logo-link {
+   text-decoration: none;
+   color: #231656;
+}
+
+.logo:hover{
+   color: #625ffb;
 }
 
 .menu {
@@ -186,6 +199,10 @@ i {
   object-fit: cover;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+}
+
+.card-text {
+   
 }
 
 .card-info {
@@ -315,6 +332,10 @@ footer {
   color: #231656;
 }
 
+.social-media-link:hover {
+   color: #625ffb;
+}
+
 .social-media-link:first-of-type {
    margin-right: .4rem;
 }
@@ -351,6 +372,10 @@ footer {
 .footer-nav-link {
    color: #4e4e4e;
    text-decoration: none;
+}
+
+.footer-nav-link:hover {
+   color:#625ffb;
 }
 
 .location {
