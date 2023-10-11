@@ -311,16 +311,16 @@ footer {
 
 #email {
   border-radius: 25px;
-  height: 40px;
-  width: 200px;
+  height: 2.5rem;
+  width: 12.5rem;
   border: 1px solid #c4c4c4;
   margin-right: 1.5rem;
 }
 
 #submit-btn {
-  height: 40px;
+  height: 2.5rem;
   border-radius: 25px;
-  width: 150px;
+  width: 9.375rem;
   font-weight: 500;
   font-size: 1rem;
   vertical-align: m;
