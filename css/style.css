@@ -208,7 +208,7 @@ i {
 .card {
   flex-basis: 30%; /* Ширина карточек */
   box-shadow: 3px 6px 4px rgba(0, 0, 0, 25%);
-  border: 1px solid #000;
+  border: 1px solid #231656;
   border-radius: 10px;
   margin-top: 4rem;
   position: relative;
