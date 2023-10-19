@@ -101,6 +101,7 @@ header {
 .logo-link {
   text-decoration: none;
   color: #231656;
+  transition: color 0.5s;
 }
 
 .logo:hover {
@@ -429,6 +430,10 @@ footer {
 
 .footer-nav-link:hover {
   color: #625ffb;
+}
+
+.logo-link:hover {
+   color: #625ffb;
 }
 
 .location {
