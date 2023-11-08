@@ -38,6 +38,125 @@ main {
   box-shadow: none;
 }
 
+/* Nav panel styles */
+
+.nav-panel {
+   width: 330px;
+   height: 100%;
+   position: fixed;
+   display: flex;
+   background-color: #fff;
+   z-index: 6;
+   right: 0;
+   justify-content: center;
+   text-align: left;
+   flex-wrap: wrap;
+   box-shadow: -4px 4px 4px rgba(0, 0, 0, 25%);
+}
+
+.fi-rr-cross {
+   font-size: 24px;
+   color: #231656;
+}
+
+.fi-rr-cross:hover {
+   color: #625ffb;
+}
+
+.fi-rr-cross:active {
+   text-shadow: none;
+}
+
+#close-btn {
+   width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0.3rem;
+  right: 0.2rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 25%);
+}
+
+.nav-panel form {
+   width: auto;
+}
+
+.search {
+   margin-top: 3rem;
+   width: 250px;
+   height: 42px;
+   border: 1px solid #231656;
+   border-radius: 20px;
+   text-align: left;
+   padding-left: 15px;
+}
+
+.search-button {
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 25%);
+}
+
+.fi-rr-search {
+   font-size: 16px;
+   color: #231656;
+}
+
+.fi-rr-search:hover {
+   color: #625ffb;
+}
+
+.fi-rr-search:active {
+   text-shadow: none;
+}
+
+.category {
+   list-style-type: none;
+   
+}
+
+.category-li {
+   margin-bottom: 16px;
+   padding-bottom: 10px;
+   padding-right: 3rem;
+   padding-left: 3rem;
+   text-align: left;
+}
+
+.category-link {
+   font-family: "Inter", sans-serif;
+   color: #231656;
+   text-decoration: none;
+   transition: color 0.5s;
+}
+
+.category-link:hover {
+   color: #625ffb;
+}
+
+.buttons-nav-panel {
+   align-self: flex-end;
+   margin-bottom: 3rem;
+}
+
+.btn-nav {
+   font-family: "Inter", serif;
+   font-weight: 400;
+   font-size: 14px;
+   width: 135px;
+   height: 35px;
+   color: #fff;
+   background-color: #231656;
+   border-radius: 20px;
+   margin-right: 10px;
+}
+
 /* Header styles */
 
 .container {
@@ -63,7 +182,7 @@ header {
   position: fixed;
   right: 0;
   left: 0;
-  z-index: 99;
+  z-index: 5;
   background-color: #fff;
 }
 
@@ -81,6 +200,7 @@ header {
   text-decoration: none;
   color: #231656;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 25%);
+  transition: color 0.5s;
 }
 
 .nav-bar-link:hover {
