@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/util.css">
+    <link rel="stylesheet" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <script src="js/jquery-3.2.1.min.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="https://kit.fontawesome.com/77bac366e9.js" crossorigin="anonymous"></script>
     <title>Roselab</title>
   </head>
   <body>
@@ -38,18 +43,110 @@
     </div>
     <div class="modal-wrapper">
       <div class="auth-popup">
-        <form action="#" class="form-container">
-          <h2 class="logo logo-auth">ROSELAB</h2>
-          <h3 class="auth-heading">Авторизация</h3>
-          <label for="email-auth">E-mail</label>
-          <input type="email" id="email-auth" />
-          <label for="pass-auth">Пароль</label>
-          <input type="password" id="pass-auth" />
-          <button class="btn btn-nav">Войти</button>
-          <p>
-            Еще нет аккаунта? <a href="#" id="sign-up">Зарегистрируйтесь</a>
-          </p>
-        </form>
+        <form class="login100-form validate-form">
+					<span class="login100-form-title">
+						ROSELAB
+					</span>
+					<span class="login100-form-title">
+						Авторизация
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Неверный формат email">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100" data-placeholder="E-mail"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Введите пароль">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100" data-placeholder="Пароль"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Войти
+							</button>
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Ещё нет аккаунта?
+						</span>
+
+						<a class="txt2" href="#">
+							Зарегистрируйтесь
+						</a>
+					</div>
+				</form>
+      </div>
+      <div class="sign-popup">
+        <form class="login100-form validate-form">
+					<span class="login100-form-title">
+						ROSELAB
+					</span>
+					<span class="login100-form-title">
+						Регистрация
+					</span>
+          <div class="wrap-input100 validate-input" data-validate = "Заполните поле">
+						<input class="input100" type="text" name="firstname">
+						<span class="focus-input100" data-placeholder="Имя"></span>
+					</div>
+          <div class="wrap-input100 validate-input" data-validate = "Заполните поле">
+						<input class="input100" type="text" name="lastname">
+						<span class="focus-input100" data-placeholder="Фамилия"></span>
+					</div>
+          <div class="wrap-input100 validate-input" data-validate = "Заполните поле">
+						<input class="input100" type="text" name="tel">
+						<span class="focus-input100" data-placeholder="Телефон"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Неверный формат email">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100" data-placeholder="E-mail"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Введите пароль">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100" data-placeholder="Пароль"></span>
+					</div>
+          <div class="wrap-input100 validate-input" data-validate="Пароли не совпадают">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="passrepeat">
+						<span class="focus-input100" data-placeholder="Повторите пароль"></span>
+					</div>
+          <div class="checkbox-div">
+          <input type="checkbox" name="checkbox" id="checkbox">
+          <label class="label-checkbox" for="checkbox">Я согласен с <a href="policy.html" class="txt4" target="_blank">общими условиями</a></label>
+          </div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Зарегистрироваться
+							</button>
+						</div>
+					</div>
+
+					<div class="text-center">
+						<span class="txt1">
+							Уже есть аккаунт?
+						</span>
+
+						<a class="txt3" href="#">
+							Авторизоваться
+						</a>
+					</div>
+				</form>
       </div>
       <div class="overlay"></div>
     </div>
