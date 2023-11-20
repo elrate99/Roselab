@@ -4,27 +4,169 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/util.css" />
+    <link
+      rel="stylesheet"
+      href="fonts/iconic/css/material-design-iconic-font.min.css"
+    />
+    <script src="js/jquery-3.2.1.min.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/77bac366e9.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Roselab</title>
   </head>
   <body>
     <div id="nav-panel" class="nav-panel">
       <button id="close-btn"><i class="fi-rr-cross"></i></button>
       <form>
-        <input type="input" class="search" placeholder="Поиск">
+        <input type="input" class="search" placeholder="Поиск" />
         <button class="search-button"><i class="fi-rr-search"></i></button>
       </form>
       <ul class="category">
-        <li class="category-li"><a href="#" class="category-link">Букеты</a></li>
-        <li class="category-li"><a href="#" class="category-link">Красные розы</a></li>
-        <li class="category-li"><a href="#" class="category-link">Белые розы</a></li>
-        <li class="category-li"><a href="#" class="category-link">Жёлтые розы</a></li>
-        <li class="category-li"><a href="#" class="category-link">Микс роз</a></li>
+        <li class="category-li">
+          <a href="bouqets.html" class="category-link">Букеты</a>
+        </li>
+        <li class="category-li">
+          <a href="#" class="category-link">Красные розы</a>
+        </li>
+        <li class="category-li">
+          <a href="#" class="category-link">Белые розы</a>
+        </li>
+        <li class="category-li">
+          <a href="#" class="category-link">Жёлтые розы</a>
+        </li>
+        <li class="category-li">
+          <a href="#" class="category-link">Микс роз</a>
+        </li>
       </ul>
       <div class="buttons-nav-panel">
-        <button class="btn btn-nav">Личный кабинет</button>
+        <button class="btn btn-nav" id="user-panel">Личный кабинет</button>
         <button class="btn btn-nav">Корзина</button>
       </div>
+    </div>
+    <div class="modal-wrapper">
+      <div class="auth-popup">
+        <form class="login100-form validate-form">
+          <span class="login100-form-title"> ROSELAB </span>
+          <span class="login100-form-title"> Авторизация </span>
+
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Неверный формат email"
+          >
+            <input class="input100" type="text" name="email" />
+            <span class="focus-input100" data-placeholder="E-mail"></span>
+          </div>
+
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Введите пароль"
+          >
+            <span class="btn-show-pass">
+              <i class="zmdi zmdi-eye"></i>
+            </span>
+            <input class="input100" type="password" name="pass" />
+            <span class="focus-input100" data-placeholder="Пароль"></span>
+          </div>
+
+          <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+              <div class="login100-form-bgbtn"></div>
+              <button class="login100-form-btn">Войти</button>
+            </div>
+          </div>
+
+          <div class="text-center p-t-115">
+            <span class="txt1"> Ещё нет аккаунта? </span>
+
+            <a class="txt2" href="#"> Зарегистрируйтесь </a>
+          </div>
+        </form>
+      </div>
+      <div class="sign-popup">
+        <form class="login100-form validate-form">
+          <span class="login100-form-title"> ROSELAB </span>
+          <span class="login100-form-title"> Регистрация </span>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Заполните поле"
+          >
+            <input class="input100" type="text" name="firstname" />
+            <span class="focus-input100" data-placeholder="Имя"></span>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Заполните поле"
+          >
+            <input class="input100" type="text" name="lastname" />
+            <span class="focus-input100" data-placeholder="Фамилия"></span>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Заполните поле"
+          >
+            <input class="input100" type="text" name="tel" />
+            <span class="focus-input100" data-placeholder="Телефон"></span>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Неверный формат email"
+          >
+            <input class="input100" type="text" name="email" />
+            <span class="focus-input100" data-placeholder="E-mail"></span>
+          </div>
+
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Введите пароль"
+          >
+            <span class="btn-show-pass">
+              <i class="zmdi zmdi-eye"></i>
+            </span>
+            <input class="input100" type="password" name="pass" />
+            <span class="focus-input100" data-placeholder="Пароль"></span>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Пароли не совпадают"
+          >
+            <span class="btn-show-pass">
+              <i class="zmdi zmdi-eye"></i>
+            </span>
+            <input class="input100" type="password" name="passrepeat" />
+            <span
+              class="focus-input100"
+              data-placeholder="Повторите пароль"
+            ></span>
+          </div>
+          <div class="checkbox-div">
+            <input type="checkbox" name="checkbox" id="checkbox" />
+            <label class="label-checkbox" for="checkbox"
+              >Я согласен с
+              <a href="policy.html" class="txt4" target="_blank"
+                >общими условиями</a
+              ></label
+            >
+          </div>
+
+          <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+              <div class="login100-form-bgbtn"></div>
+              <button class="login100-form-btn">Зарегистрироваться</button>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <span class="txt1"> Уже есть аккаунт? </span>
+
+            <a class="txt3" href="#"> Авторизоваться </a>
+          </div>
+        </form>
+      </div>
+      <div class="overlay"></div>
     </div>
     <header>
       <div class="container">
@@ -123,38 +265,38 @@
           </div>
         </div>
         <div class="card">
-            <img class="card-img" src="img/IMG_6495.JPG" alt="Розы красные" />
-            <div class="hover-desc">
-              <p class="card-text">Текст</p>
-            </div>
-            <div class="card-info">
-              <a href="#" class="card-name"><h3>Микс роз</h3></a>
-              <span class="card-price">75€</span>
-              <button class="in-cart btn">В корзину</button>
-            </div>
+          <img class="card-img" src="img/IMG_6495.JPG" alt="Розы красные" />
+          <div class="hover-desc">
+            <p class="card-text">Текст</p>
           </div>
-          <div class="card">
-            <img class="card-img" src="img/IMG_6509.JPG" alt="Розы красные" />
-            <div class="hover-desc">
-              <p class="card-text">Текст</p>
-            </div>
-            <div class="card-info">
-              <a href="#" class="card-name"><h3>Белые розы</h3></a>
-              <span class="card-price">92€</span>
-              <button class="in-cart btn">В корзину</button>
-            </div>
+          <div class="card-info">
+            <a href="#" class="card-name"><h3>Микс роз</h3></a>
+            <span class="card-price">75€</span>
+            <button class="in-cart btn">В корзину</button>
           </div>
-          <div class="card">
-            <img class="card-img" src="img/IMG_6504.JPG" alt="Розы красные" />
-            <div class="hover-desc">
-              <p class="card-text">Текст</p>
-            </div>
-            <div class="card-info">
-              <a href="#" class="card-name"><h3>Красные розы</h3></a>
-              <span class="card-price">49€</span>
-              <button class="in-cart btn">В корзину</button>
-            </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="img/IMG_6509.JPG" alt="Розы красные" />
+          <div class="hover-desc">
+            <p class="card-text">Текст</p>
           </div>
+          <div class="card-info">
+            <a href="#" class="card-name"><h3>Белые розы</h3></a>
+            <span class="card-price">92€</span>
+            <button class="in-cart btn">В корзину</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="img/IMG_6504.JPG" alt="Розы красные" />
+          <div class="hover-desc">
+            <p class="card-text">Текст</p>
+          </div>
+          <div class="card-info">
+            <a href="#" class="card-name"><h3>Красные розы</h3></a>
+            <span class="card-price">49€</span>
+            <button class="in-cart btn">В корзину</button>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
@@ -180,8 +322,9 @@
       </div>
       <div class="footer-info">
         <div class="about">
-          <h2 class="footer-logo logo"><a href="index.html" class="logo-link"
-            >ROSELAB</a></h2>
+          <h2 class="footer-logo logo">
+            <a href="index.html" class="logo-link">ROSELAB</a>
+          </h2>
           <p class="about-text">
             Текст о фирме. <br />
             Мы кто-то и занимаемся производством букетов и произведений чтобы
@@ -212,7 +355,7 @@
               <a href="policy.html" class="footer-nav-link">Общие условия</a>
             </li>
             <li class="footer-nav-li">
-              <a href="" class="footer-nav-link">FAQ</a>
+              <a href="faq.html" class="footer-nav-link">FAQ</a>
             </li>
             <li class="footer-nav-li">
               <a href="" class="footer-nav-link">Доставка</a>
@@ -229,7 +372,7 @@
             <i class="fi-rr-envelope"></i
             ><span class="email">info@roselab.ee</span>
           </div>
-          <br>
+          <br />
           <div class="phone-contact">
             <i class="fi-rr-phone-call"></i
             ><span class="phone">+372 55 123 456</span>

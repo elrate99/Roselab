@@ -652,6 +652,9 @@ footer {
   z-index: 9;
 }
 
+.sign-popup {
+  display: none;
+}
 
 .logo-auth {
   padding: 20px;
@@ -669,7 +672,6 @@ footer {
   outline: none;
   border: none;
 }
-
 
 .auth-popup textarea:focus,
 .auth-popup input:focus,
@@ -773,8 +775,7 @@ footer {
 }
 
 .auth-popup .txt2,
-.sign-popup .txt3,
-.sign-popup .txt4 {
+.sign-popup .txt3 {
   font-size: 14px;
   color: #333333;
   line-height: 1.5;
@@ -782,6 +783,16 @@ footer {
   font-family: "Open Sans";
   transition: all 0.5s;
 }
+
+.sign-popup .txt4 {
+  font-size: 14px;
+  color: #999999;
+  line-height: 1.5;
+  text-decoration: none;
+  font-family: "Open Sans";
+  transition: all 0.5s;
+}
+
 .auth-popup .txt2:hover,
 .sign-popup .txt3:hover,
 .sign-popup .txt4:hover {
@@ -789,7 +800,7 @@ footer {
 }
 
 .sign-popup .text-center {
-   padding-top: 20px;
+  padding-top: 20px;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -1147,4 +1158,54 @@ footer {
     visibility: visible;
     opacity: 1;
   }
+}
+
+/* FAQ Page Styles */
+
+.faq {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.faq-box {
+  width: 40%;
+  margin-top: 3rem;
+}
+
+.faq-header {
+  border: 1px solid #000;
+  border-top: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  align-content: center;
+  align-items: center;
+}
+
+.faq-header:first-of-type {
+   border-top: 1px solid #000;
+}
+
+.faq-body {
+  width: 100%;
+  border: 1px solid #000;
+  border-top: none;
+  display: none;
+}
+
+.faq-text {
+  text-align: left;
+  font-size: 16px;
+  color: #4e4e4e;
+  font-family: "Open Sans", sans-serif;
+}
+
+.faq-fi {
+  vertical-align: middle;
+  font-size: 24px;
+  transform: rotate(45deg);
+  padding-top: 5px;
 }
