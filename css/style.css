@@ -1176,7 +1176,7 @@ footer {
 }
 
 .faq-header {
-  border: 1px solid #000;
+  border: 1px solid #231656;
   border-top: none;
   display: flex;
   justify-content: space-between;
@@ -1186,14 +1186,21 @@ footer {
 }
 
 .faq-header:first-of-type {
-   border-top: 1px solid #000;
+   border-top: 1px solid #231656;
 }
 
 .faq-body {
   width: 100%;
-  border: 1px solid #000;
+  border: 1px solid #231656;
   border-top: none;
   display: none;
+  opacity: 1;
+}
+
+.faq-heading {
+   font-family: "Open Sans", sans-serif;
+   color: #231656;
+   font-weight: 500;
 }
 
 .faq-text {
@@ -1201,6 +1208,7 @@ footer {
   font-size: 16px;
   color: #4e4e4e;
   font-family: "Open Sans", sans-serif;
+  padding: 10px;
 }
 
 .faq-fi {
@@ -1208,4 +1216,20 @@ footer {
   font-size: 24px;
   transform: rotate(45deg);
   padding-top: 5px;
+}
+
+
+.animate-me {
+   transition: transform 0.3s ease-in;
+   }
+
+.faq-anim {
+   animation: 10s show-faq ease-in;
+}
+
+@keyframes show-faq {
+   from {
+      display: none;
+   } to {display: block;}
+   
 }

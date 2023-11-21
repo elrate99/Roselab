@@ -16,6 +16,7 @@ const faqBodys = document.querySelectorAll(".faq-body");
 const faqBtn = document.querySelector(".faq-fi");
 const faqBody = document.querySelector(".faq-body");
 
+
 menuBtn.addEventListener("click", () => {
     navPanel.style.display = 'flex';
 })
@@ -49,11 +50,13 @@ faqBtns.forEach(faqBtn => {
             faqBodys.forEach(faqBody => {
                 if (faqBody.style.display == "none") {
                     faqBtn.style.transform = "rotate(90deg)";
+                    faqBtn.classList.add('animate-me')
                     faqBody.style.display = "block";
+                    faqBody.classList.add('faq-anim');
             } else {
-                    faqBtn.style.transform = "rotate(45deg)";
-                    faqBody.style.display = "none";
+                faqBtn.style.transform = "rotate(45deg)";
+                    faqBody.style.display = "none";    
             }
-            })
+        })
     })
 })
