@@ -1,3 +1,4 @@
+"use strict";
 const menuBtn = document.getElementById('menu-btn');
 const closeBtn = document.getElementById('close-btn');
 const navPanel = document.getElementById('nav-panel');
@@ -15,6 +16,7 @@ const faqBtns = document.querySelectorAll(".faq-fi");
 const faqBodys = document.querySelectorAll(".faq-body");
 const faqBtn = document.querySelector(".faq-fi");
 const faqBody = document.querySelector(".faq-body");
+const faqHeaders = document.querySelectorAll(".faq-header");
 
 
 menuBtn.addEventListener("click", () => {
@@ -45,7 +47,8 @@ signInLink.addEventListener("click", (e) => {
     signInAuth.style.display = "block";
 })
 
-faqBtns.forEach(faqBtn => {
+
+/* faqBtns.forEach(faqBtn => {
         faqBtn.addEventListener("click", () => {
             faqBodys.forEach(faqBody => {
                 if (faqBody.style.display == "none") {
@@ -58,5 +61,26 @@ faqBtns.forEach(faqBtn => {
                     faqBody.style.display = "none";    
             }
         })
+    })
+}) */
+
+faqBtns.forEach((faqBtn, faqBtnKey) => {
+    faqBodys.forEach(faqBody => {
+        faqBody.style.maxHeight = "0px";
+    });
+    faqBtn.addEventListener("click", function() {
+        if (faqBodys[faqBtnKey].style.maxHeight == "0px") {
+          this.style.transform = "rotate(0deg)";
+          faqBodys[faqBtnKey].style.maxHeight = "150px";
+          setTimeout(() => {
+            faqHeaders[faqBtnKey].classList.add('faq-header-open');
+        }, 200); // add the class
+        } else {
+          this.style.transform = "rotate(45deg)";
+          faqBodys[faqBtnKey].style.maxHeight = "0px";
+          setTimeout(() => {
+            faqHeaders[faqBtnKey].classList.remove('faq-header-open');
+        }, 1000); // remove the class
+        }
     })
 })

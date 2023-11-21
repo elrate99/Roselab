@@ -1183,24 +1183,33 @@ footer {
   padding: 5px 10px;
   align-content: center;
   align-items: center;
+  overflow: hidden;
 }
+.faq-header-open {
+   border-bottom: none;
+   box-shadow: 0px 10px 10px rgba(0,0,0,0.1); /* adjust this as necessary */
+ }
+ 
 
 .faq-header:first-of-type {
-   border-top: 1px solid #231656;
+  border-top: 1px solid #231656;
 }
 
 .faq-body {
   width: 100%;
   border: 1px solid #231656;
   border-top: none;
-  display: none;
-  opacity: 1;
+  position: relative;
+  max-height: 0px; /* replace display: none */
+  min-height: 0px;
+  overflow: hidden; /* add this line */
+  transition: max-height 0.8s ease-in-out;
 }
 
 .faq-heading {
-   font-family: "Open Sans", sans-serif;
-   color: #231656;
-   font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+  color: #231656;
+  font-weight: 500;
 }
 
 .faq-text {
@@ -1216,20 +1225,20 @@ footer {
   font-size: 24px;
   transform: rotate(45deg);
   padding-top: 5px;
+  transition: transform 0.3s ease-in;
 }
 
+@keyframes faq-body-anim-reverse {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  18% {
+    opacity: 1;
+  }
 
-.animate-me {
-   transition: transform 0.3s ease-in;
-   }
-
-.faq-anim {
-   animation: 10s show-faq ease-in;
-}
-
-@keyframes show-faq {
-   from {
-      display: none;
-   } to {display: block;}
-   
+  100% {
+    bottom: 150px;
+    opacity: 0;
+  }
 }
