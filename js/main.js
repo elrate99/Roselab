@@ -19,6 +19,7 @@ const faqBody = document.querySelector(".faq-body");
 const faqHeaders = document.querySelectorAll(".faq-header");
 
 
+
 menuBtn.addEventListener("click", () => {
     navPanel.style.display = 'flex';
 })
@@ -84,3 +85,6 @@ faqBtns.forEach((faqBtn, faqBtnKey) => {
         }
     })
 })
+
+
+  
