@@ -86,5 +86,66 @@ faqBtns.forEach((faqBtn, faqBtnKey) => {
     })
 })
 
+const prevButton = document.querySelector('.slider-prev-btn');
+const nextButton = document.querySelector('.slider-next-btn');
 
-  
+// Получаем контейнер с карточками и список всех карточек
+const cardsWrapper = document.querySelector('.same-products-cards-wrapper');
+const cards = document.querySelector('.same-products-cards');
+const cardItems = document.querySelectorAll('.same-product-card');
+
+// Определяем ширину одной карточки
+const cardWidth = cardItems[0].offsetWidth; // Ширина первой карточки
+
+// Определяем видимое количество карточек
+const visibleItems = 4;
+
+// Инициализируем текущий индекс
+let currentIndex = 0;
+
+// Функция для скрытия карточек
+const hideCards = () => {
+  cardItems.forEach((item, index) => {
+    if (index < currentIndex || index >= currentIndex + visibleItems) {
+      item.style.display = 'none';
+    } else {
+      item.style.display = 'block';
+    }
+  });
+};
+
+// Обработчик клика на стрелку "вправо"
+nextButton.addEventListener('click', () => {
+  if (currentIndex + visibleItems < cardItems.length) {
+    currentIndex++;
+    cardsWrapper.scrollLeft += cardWidth;
+    hideCards();
+  }
+  // Показываем стрелку "влево" после нажатия на стрелку "вправо"
+  prevButton.style.display = 'block';
+});
+
+// Обработчик клика на стрелку "влево"
+prevButton.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    cardsWrapper.scrollLeft -= cardWidth;
+    hideCards();
+  }
+  // Проверяем, скрыта ли крайняя левая карточка, если да - скрываем стрелку "влево"
+  if (currentIndex === 0) {
+    prevButton.style.display = 'none';
+  }
+});
+
+// Проверяем положение прокрутки и показываем/скрываем стрелки при необходимости
+cardsWrapper.addEventListener('scroll', () => {
+  const scrollOffset = cardsWrapper.scrollLeft;
+  const maxScroll = cards.scrollWidth - cardsWrapper.clientWidth;
+
+  prevButton.style.display = scrollOffset <= 0 ? 'none' : 'block';
+  nextButton.style.display = scrollOffset >= maxScroll ? 'none' : 'block';
+});
+
+// Инициализация начального состояния
+hideCards();
