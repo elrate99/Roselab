@@ -18,6 +18,15 @@ const faqBtn = document.querySelector(".faq-fi");
 const faqBody = document.querySelector(".faq-body");
 const faqHeaders = document.querySelectorAll(".faq-header");
 
+// Slider Same Products 
+
+const prevBtn = document.querySelector('.slider-prev-btn');
+const nextBtn = document.querySelector('.slider-next-btn');
+const cardsWrapper = document.querySelector('.same-products-cards');
+const cardWidth = document.querySelector('.same-product-card').offsetWidth;
+const slideOffset = 325; // Увеличиваем значение на 200 пикселей (подставьте нужное значение)
+let currentPosition = 0;
+
 
 
 menuBtn.addEventListener("click", () => {
@@ -86,66 +95,29 @@ faqBtns.forEach((faqBtn, faqBtnKey) => {
     })
 })
 
-const prevButton = document.querySelector('.slider-prev-btn');
-const nextButton = document.querySelector('.slider-next-btn');
-
-// Получаем контейнер с карточками и список всех карточек
-const cardsWrapper = document.querySelector('.same-products-cards-wrapper');
-const cards = document.querySelector('.same-products-cards');
-const cardItems = document.querySelectorAll('.same-product-card');
-
-// Определяем ширину одной карточки
-const cardWidth = cardItems[0].offsetWidth; // Ширина первой карточки
-
-// Определяем видимое количество карточек
-const visibleItems = 4;
-
-// Инициализируем текущий индекс
-let currentIndex = 0;
-
-// Функция для скрытия карточек
-const hideCards = () => {
-  cardItems.forEach((item, index) => {
-    if (index < currentIndex || index >= currentIndex + visibleItems) {
-      item.style.display = 'none';
-    } else {
-      item.style.display = 'block';
+// Функция для переключения слайдов влево
+const slideLeft = () => {
+  if (currentPosition < 0) {
+    currentPosition += slideOffset; // Изменяем значение на slideOffset
+    if (currentPosition > 0) {
+      currentPosition = 0;
     }
-  });
+    cardsWrapper.style.transform = `translateX(${currentPosition}px)`;
+  }
 };
 
-// Обработчик клика на стрелку "вправо"
-nextButton.addEventListener('click', () => {
-  if (currentIndex + visibleItems < cardItems.length) {
-    currentIndex++;
-    cardsWrapper.scrollLeft += cardWidth;
-    hideCards();
+// Функция для переключения слайдов вправо
+const slideRight = () => {
+  const maxPosition = -(cardsWrapper.scrollWidth - cardsWrapper.offsetWidth);
+  if (currentPosition > maxPosition) {
+    currentPosition -= slideOffset; // Изменяем значение на slideOffset
+    if (currentPosition < maxPosition) {
+      currentPosition = maxPosition;
+    }
+    cardsWrapper.style.transform = `translateX(${currentPosition}px)`;
   }
-  // Показываем стрелку "влево" после нажатия на стрелку "вправо"
-  prevButton.style.display = 'block';
-});
+};
 
-// Обработчик клика на стрелку "влево"
-prevButton.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    cardsWrapper.scrollLeft -= cardWidth;
-    hideCards();
-  }
-  // Проверяем, скрыта ли крайняя левая карточка, если да - скрываем стрелку "влево"
-  if (currentIndex === 0) {
-    prevButton.style.display = 'none';
-  }
-});
-
-// Проверяем положение прокрутки и показываем/скрываем стрелки при необходимости
-cardsWrapper.addEventListener('scroll', () => {
-  const scrollOffset = cardsWrapper.scrollLeft;
-  const maxScroll = cards.scrollWidth - cardsWrapper.clientWidth;
-
-  prevButton.style.display = scrollOffset <= 0 ? 'none' : 'block';
-  nextButton.style.display = scrollOffset >= maxScroll ? 'none' : 'block';
-});
-
-// Инициализация начального состояния
-hideCards();
+// Обработчики событий для кнопок
+prevBtn.addEventListener('click', slideLeft);
+nextBtn.addEventListener('click', slideRight);
