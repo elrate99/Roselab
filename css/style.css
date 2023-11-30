@@ -1326,6 +1326,8 @@ hr {
   font-family: "Open Sans", sans-serif;
   color: #4e4e4e;
   margin-bottom: 1rem;
+  width: 75%;
+  text-align: left;
 }
 
 .product-price {
