@@ -127,14 +127,37 @@ const productList = document.querySelector('.product-list');
 const finalPrice = document.querySelector('.final-price b');
 let totalPrice = 40.00;
 
+// Объект для хранения информации о продуктах
+const products = {
+  "Праздничная упаковка": {
+    price: '€4.00',
+    name: 'Праздничная упаковка'
+  },
+  "Золотые блестки": {
+    price: '€2.00',
+    name: 'Праздничная упаковка'
+  },
+  "Rafaello в букете": {
+    price: '€8.00',
+    name: 'Rafaello в букете'
+  },
+  "Шарики": {
+    price: '€6.00',
+    name: 'Шарики'
+  },
+  // Другие продукты
+};
+
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener('click', function() {
     const parentLabel = this.parentElement;
     const associatedCheckbox = parentLabel.querySelector('.hidden-checkbox');
     const labelContent = parentLabel.textContent.trim();
-    const price = '€6.00'; // Стоимость добавляемого продукта
 
     if (associatedCheckbox) {
+      const productData = products[labelContent];
+      if (!productData) return; // Проверка наличия информации о продукте
+
       if (this.classList.contains('fi-rr-square')) {
         this.classList.remove('fi-rr-square');
         this.classList.add('fi-rr-checkbox');
@@ -143,33 +166,31 @@ checkboxes.forEach((checkbox) => {
         // Добавляем продукт в product-list
         const productName = document.createElement('span');
         productName.classList.add('product-name');
-        productName.setAttribute('data-name', labelContent);
-        productName.textContent = labelContent;
+        productName.setAttribute('data-name', productData.name);
+        productName.textContent = productData.name;
 
         const productPrice = document.createElement('span');
         productPrice.classList.add('product-price');
-        productPrice.textContent = price;
+        productPrice.textContent = productData.price;
 
         productList.appendChild(productName);
         productList.appendChild(productPrice);
 
-        totalPrice += parseFloat(price.replace('€', ''));
+        totalPrice += parseFloat(productData.price.replace('€', ''));
         finalPrice.textContent = `€${totalPrice.toFixed(2)}`;
-
-        
       } else {
         this.classList.remove('fi-rr-checkbox');
         this.classList.add('fi-rr-square');
         associatedCheckbox.checked = true; // Устанавливаем checked
 
         // Удаляем продукт из product-list
-        const productToRemove = productList.querySelector(`.product-name[data-name="${labelContent}"]`);
+        const productToRemove = productList.querySelector(`.product-name[data-name="${productData.name}"]`);
         if (productToRemove) {
           const productPrice = productToRemove.nextElementSibling;
           productList.removeChild(productToRemove);
           productList.removeChild(productPrice);
 
-          totalPrice -= parseFloat(price.replace('€', ''));
+          totalPrice -= parseFloat(productData.price.replace('€', ''));
           finalPrice.textContent = `€${totalPrice.toFixed(2)}`;
         }
       }
