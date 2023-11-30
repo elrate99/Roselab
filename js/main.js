@@ -121,3 +121,26 @@ const slideRight = () => {
 // Обработчики событий для кнопок
 prevBtn.addEventListener('click', slideLeft);
 nextBtn.addEventListener('click', slideRight);
+
+const checkboxes = document.querySelectorAll('.fi-rr-square');
+
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('click', function() {
+    const parentLabel = this.parentElement;
+    const associatedCheckbox = parentLabel.querySelector('.hidden-checkbox');
+
+    if (associatedCheckbox) {
+      if (this.classList.contains('fi-rr-square')) {
+        this.classList.remove('fi-rr-square');
+        this.classList.add('fi-rr-checkbox');
+        associatedCheckbox.checked = false; // Снимаем checked
+      } else {
+        this.classList.remove('fi-rr-checkbox');
+        this.classList.add('fi-rr-square');
+        associatedCheckbox.checked = true; // Устанавливаем checked
+      }
+    }
+  });
+});
+
+

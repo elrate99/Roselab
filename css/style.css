@@ -1300,6 +1300,17 @@ footer {
   text-align: left;
 }
 
+.hidden-checkbox {
+   display: none; /* Скрываем базовые чекбоксы */
+ }
+ 
+ /* Установите стили для иконок по умолчанию */
+ .ficheck {
+   /* Стили для чекбокса без галочки */
+   font-size: 12px;
+ }
+
+ 
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
