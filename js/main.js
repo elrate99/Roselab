@@ -18,14 +18,6 @@ const faqBtn = document.querySelector(".faq-fi");
 const faqBody = document.querySelector(".faq-body");
 const faqHeaders = document.querySelectorAll(".faq-header");
 
-// Slider Same Products 
-
-const prevBtn = document.querySelector('.slider-prev-btn');
-const nextBtn = document.querySelector('.slider-next-btn');
-const cardsWrapper = document.querySelector('.same-products-cards');
-const cardWidth = document.querySelector('.same-product-card').offsetWidth;
-const slideOffset = 325; // Увеличиваем значение на 200 пикселей (подставьте нужное значение)
-let currentPosition = 0;
 
 
 
@@ -95,6 +87,16 @@ faqBtns.forEach((faqBtn, faqBtnKey) => {
     })
 })
 
+// Slider Same Products 
+
+const prevBtn = document.querySelector('.slider-prev-btn');
+const nextBtn = document.querySelector('.slider-next-btn');
+const cardsWrapper = document.querySelector('.same-products-cards');
+const cardWidth = document.querySelector('.same-product-card').offsetWidth;
+const slideOffset = 325; // Увеличиваем значение на 200 пикселей (подставьте нужное значение)
+let currentPosition = 0;
+
+
 // Функция для переключения слайдов влево
 const slideLeft = () => {
   if (currentPosition < 0) {
@@ -134,11 +136,11 @@ const products = {
     name: 'Праздничная упаковка'
   },
   "Золотые блестки": {
-    price: '€2.00',
+    price: '€2.60',
     name: 'Праздничная упаковка'
   },
   "Rafaello в букете": {
-    price: '€8.00',
+    price: '€8.50',
     name: 'Rafaello в букете'
   },
   "Шарики": {
