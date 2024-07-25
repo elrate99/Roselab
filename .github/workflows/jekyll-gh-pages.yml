@@ -17,10 +17,13 @@ jobs:
           node-version: '14'
       - name: Install dependencies
         run: npm install
+        working-directory: ./Roselab/Roselab  # Укажите путь к вашему проекту
       - name: Build
         run: npm run build
+        working-directory: ./Roselab/Roselab  # Укажите путь к вашему проекту
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # Папка с собранным сайтом
+          publish_dir: ./Roselab/Roselab/build  # Укажите путь к папке с собранным сайтом
+          enablement: true
